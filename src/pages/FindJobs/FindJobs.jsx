@@ -37,13 +37,13 @@ const FindJobs = () => {
       {!loading && <LocationBar lat={lat} lng={lng} />}
 
       {/* Jobs List */}
-      {!loading && jobs.length > 0 && (
+      {!loading && jobs.length > 0 ?(
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-5">
           {jobs.map((job) => (
             <JobCard key={job._id} job={job} />
           ))}
         </div>
-      )}
+      ): <p className="text-center mt-5 text-gray-500">No jobs found in your area.</p>}
     </div>
   );
 };
